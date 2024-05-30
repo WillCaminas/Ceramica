@@ -42,7 +42,7 @@ public class startScreen extends JFrame{
     private JLabel jlabelppc;
     
     private JButton jButtonIdentifier;
-    private materialTypes materiaTypes;
+    private materialTypes materialTypes;
     
     public startScreen() {
         setTitle("Identificación de arcillas");
@@ -80,9 +80,11 @@ public class startScreen extends JFrame{
         jButtonIdentifier.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                materialTypes.materialCalculate(Double.parseDouble(jTextFieldsio.getText()), Double.parseDouble(jTextFieldfe2o3.getText()), Double.parseDouble(jTextFieldal2o.getText()), 
+                materialTypes = new materialTypes(Double.parseDouble(jTextFieldsio.getText()), Double.parseDouble(jTextFieldfe2o3.getText()), Double.parseDouble(jTextFieldal2o.getText()), 
                         Double.parseDouble(jTextFieldcao.getText()), Double.parseDouble(jTextFieldmgo.getText()), Double.parseDouble(jTextFieldna2o.getName()), 
                         Double.parseDouble(jTextFieldk2o.getName()), Double.parseDouble(jTextFieldtio2.getName()), Double.parseDouble(jTextFieldppc.getName()));
+                
+                materialTypes.materialCalculate();
             }
         });
 
