@@ -43,7 +43,6 @@ public class materialTypes {
         double TiO2 = elementos[7];
         double PPC = elementos[8];
         
-        //ARCILLA ROJA GENERICA
         // ARCILLA ROJA GENÉRICA
         if (SiO2 > 30 && SiO2 < 65) {
             if (Al2O3 > 12 && Al2O3 < 25) {
@@ -79,7 +78,67 @@ public class materialTypes {
             System.out.println("El material no es arcilla blanca.");
         }
         
-        //
+        // CAOLÍN
+        if (SiO2 > 45 && SiO2 < 60) {
+            if (Al2O3 > 25 && Al2O3 < 38) {
+                if (Fe2O3 > 0.3 && Fe2O3 < 2) {
+                    if (CaO > 0.02 && CaO < 0.22) {
+                        if (MgO < 0.4) {
+                            if (Na2O > 0.04 && Na2O < 0.8) {
+                                if (K2O > 0.5 && K2O < 2.5) {
+                                    if (TiO2 < 0.5) {
+                                        if (PPC > 8 && PPC < 13.6) {
+                                            System.out.println("El material es caolín.");
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        //ARENA FELDESPÁTICA GENÉRICA
+        if (SiO2 > 80 && SiO2 < 97) {
+            if (Al2O3 > 2 && Al2O3 < 11) {
+                if (Fe2O3 > 0.05 && Fe2O3 < 0.15) {
+                    if (CaO < 0.08) {
+                        if (MgO < 0.2) {
+                            if (Na2O > 0.1 && Na2O < 0.6) {
+                                if (K2O > 1 && K2O < 4) {
+                                    if (TiO2 < 0.03) {
+                                        if (PPC < 2) {
+                                            System.out.println("El material es desgrasante - arena feldespática genérica.");
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // CARBONATO CÁLCICO GENERICO
+        if (SiO2 > 0.1 && SiO2 < 3) {
+            if (Al2O3 < 1) {
+                if (Fe2O3 <= 3.5) {
+                    if (CaO > 50 && CaO < 56) {
+                        if (MgO < 2.5) {
+                            if (PPC > 40 && PPC < 45) {
+                                System.out.println("El material es carbonato cálcico genérico.");
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        
         
     }
 
