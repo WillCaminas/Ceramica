@@ -4,6 +4,8 @@
  */
 package com.mycompany.ceramica;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -38,9 +40,9 @@ public class startScreen extends JFrame{
     private JLabel jLabelk2o;
     private JLabel jLabeltio2;
     private JLabel jlabelppc;
-    private JLabel jLabelResult;
     
     private JButton jButtonIdentifier;
+    private materialTypes materiaTypes;
     
     public startScreen() {
         setTitle("Identificación de arcillas");
@@ -52,13 +54,37 @@ public class startScreen extends JFrame{
         add(jTextFieldsio = new JTextField(5));
                 
         add(jLabelfe2o = new JLabel("Fe2O3 %"));
-        add(jTextFieldal2o = new JTextField(5));
+        add(jTextFieldfe2o3 = new JTextField(5));
         
         add(jLabelal2o = new JLabel("Al2O3 %"));
         add(jTextFieldal2o = new JTextField(5));
         
         add(jLabelcao = new JLabel("CaO %"));
         add(jTextFieldcao = new JTextField(5));
+        
+        add(jLabelmgo = new JLabel("MgO %"));
+        add(jTextFieldmgo = new JTextField(5));
+        
+        add(jLabelna2o = new JLabel("Na2O %"));
+        add(jTextFieldna2o = new JTextField(5));
+        
+        add(jLabelk2o = new JLabel("K2O %"));
+        add(jTextFieldk2o = new JTextField(5));
+        
+        add(jLabeltio2 = new JLabel("TiO2 %"));
+        add(jTextFieldtio2 = new JTextField(5));
+        
+        add(jlabelppc = new JLabel("PPC %"));
+        add(jTextFieldppc = new JTextField(5));
+        
+        jButtonIdentifier.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                materialTypes.materialCalculate(Double.parseDouble(jTextFieldsio.getText()), Double.parseDouble(jTextFieldfe2o3.getText()), Double.parseDouble(jTextFieldal2o.getText()), 
+                        Double.parseDouble(jTextFieldcao.getText()), Double.parseDouble(jTextFieldmgo.getText()), Double.parseDouble(jTextFieldna2o.getName()), 
+                        Double.parseDouble(jTextFieldk2o.getName()), Double.parseDouble(jTextFieldtio2.getName()), Double.parseDouble(jTextFieldppc.getName()));
+            }
+        });
 
     }
 
