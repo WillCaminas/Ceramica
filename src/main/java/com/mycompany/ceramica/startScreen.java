@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -46,6 +47,19 @@ public class startScreen extends JFrame{
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+        
+        add(jLabelsio = new JLabel("SiO2 %"));
+        add(jTextFieldsio = new JTextField(5));
+                
+        add(jLabelfe2o = new JLabel("Fe2O3 %"));
+        add(jTextFieldal2o = new JTextField(5));
+        
+        add(jLabelal2o = new JLabel("Al2O3 %"));
+        add(jTextFieldal2o = new JTextField(5));
+        
+        add(jLabelcao = new JLabel("CaO %"));
+        add(jTextFieldcao = new JTextField(5));
+
     }
 
     
@@ -54,7 +68,12 @@ public class startScreen extends JFrame{
     
     
     public static void main(String[] args) {
-        
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new startScreen().setVisible(true);
+            }
+        });
     }
     
 }
